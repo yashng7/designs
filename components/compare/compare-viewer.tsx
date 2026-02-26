@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
 import type { DesignMeta, DesignTokens } from '@/lib/types';
 import { componentLoaders, type DesignSlug } from '@/lib/registry';

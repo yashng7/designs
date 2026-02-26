@@ -53,7 +53,7 @@ export function PatternViewer({ type }: Props) {
         <span className="mb-4 block text-3xl font-light text-terra">×</span>
         <h3 className="font-display text-lg font-light text-ivory">No patterns found</h3>
         <p className="mt-2 font-mono text-[11px] uppercase tracking-wider text-stone">
-          No designs have a "{type}" section defined.
+          No designs have a &quot;{type}&quot; section defined.
         </p>
       </div>
     );

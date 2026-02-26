@@ -81,6 +81,7 @@ export function DesignViewer({ slug, meta, tokens }: Props) {
     if (isMobile && viewport !== 'mobile') {
       setViewport('mobile');
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isMobile]);
 
   // Force 100% zoom when inspector is on
@@ -91,6 +92,7 @@ export function DesignViewer({ slug, meta, tokens }: Props) {
     } else {
       setZoom(prevZoom);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inspectorOn]);
 
   const togglePanel = useCallback(

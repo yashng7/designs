@@ -262,4 +262,4 @@ Typography uses three stacked font families:
 
 ## License
 
-Private.
+This project is licensed under the [MIT License](LICENSE).
