@@ -11,7 +11,7 @@ export interface DesignMeta {
   inspiration?: string;
   notes?: string;
   layout: {
-    type: 'single-page' | 'multi-section' | 'grid-based';
+    type: 'single-page' | 'multi-section' | 'grid-based' | 'full-width';
     gridSystem?: string;
     maxWidth?: string;
   };
