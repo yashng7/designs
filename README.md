@@ -64,7 +64,7 @@ Browse reusable UI pattern sections (hero, navbar, features, pricing, footer, et
 
 ```bash
 # Clone the repository
-git clone <repo-url> && cd design-showcase
+git clone https://github.com/yashng7/designs.git && cd designs
 
 # Start the development server
 docker compose up --build -d app
