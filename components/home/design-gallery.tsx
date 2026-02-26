@@ -5,6 +5,11 @@ import { motion } from 'motion/react';
 import type { DesignMeta } from '@/lib/types';
 import { staggerContainer, staggerItem } from '@/lib/motion';
 
+const previewImages: Record<string, string> = {
+  'startup-saas': '/previews/sass-image.png',
+  'agency-portfolio': '/previews/agency-image.png',
+};
+
 export function DesignGallery({ designs }: { designs: DesignMeta[] }) {
   return (
     <motion.div
@@ -18,10 +23,20 @@ export function DesignGallery({ designs }: { designs: DesignMeta[] }) {
           <Link href={`/design/${d.slug}`} className="group block">
             <div className="overflow-hidden rounded-lg border border-ruled bg-graphite transition-all duration-300 hover:-translate-y-1 hover:border-terra/30 hover:shadow-lg hover:shadow-terra-glow">
               {/* Preview area */}
-              <div className="flex h-48 items-center justify-center border-b border-ruled bg-ink/50">
-                <span className="font-display text-4xl font-extralight tracking-wider text-ruled group-hover:text-stone transition-colors duration-300">
-                  {d.slug.split('-').map((w) => w[0].toUpperCase()).join('')}
-                </span>
+              <div
+                className="relative h-48 border-b border-ruled bg-ink/50 bg-cover bg-top transition-transform duration-500 group-hover:scale-105"
+                style={
+                  previewImages[d.slug]
+                    ? { backgroundImage: `url(${previewImages[d.slug]})` }
+                    : undefined
+                }
+              >
+                {!previewImages[d.slug] && (
+                  <span className="absolute inset-0 flex items-center justify-center font-display text-4xl font-extralight tracking-wider text-ruled group-hover:text-stone transition-colors duration-300">
+                    {d.slug.split('-').map((w) => w[0].toUpperCase()).join('')}
+                  </span>
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-graphite/80 via-transparent to-transparent" />
               </div>
 
               {/* Content */}

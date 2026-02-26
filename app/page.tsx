@@ -10,7 +10,10 @@ export default async function HomePage() {
     <main className="min-h-screen">
       <HeroSection />
       <FeaturesSection />
-      <DesignGallery designs={designs} />
+      <section id="designs" className="pt-24 pb-12 w-full flex flex-col items-center">
+        <h2 className="mb-8 font-display text-2xl tracking-wide text-ivory text-center">Featured Designs</h2>
+        <DesignGallery designs={designs} />
+      </section>
     </main>
   );
 }
