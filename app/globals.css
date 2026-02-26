@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --ink: #0d0d0f;
+    --graphite: #141416;
+    --ruled: #252528;
+    --stone: #8a847b;
+    --ivory: #f0ece4;
+    --terra: #d4634a;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--ink);
+    color: var(--ivory);
+    font-family: var(--font-source-sans), system-ui, sans-serif;
+  }
+
+  /* Architectural grid background */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-image:
+      linear-gradient(var(--ruled) 1px, transparent 1px),
+      linear-gradient(90deg, var(--ruled) 1px, transparent 1px);
+    background-size: 80px 80px;
+    opacity: 0.2;
+    mask-image: radial-gradient(ellipse at 50% 0%, black 0%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse at 50% 0%, black 0%, transparent 70%);
+  }
+
+  /* Selection */
+  ::selection {
+    background: rgba(212, 99, 74, 0.3);
+    color: var(--ivory);
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--ink);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--ruled);
+    border-radius: 999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--stone);
+  }
+}
+
+@layer utilities {
+  .text-ivory {
+    color: var(--ivory);
+  }
+
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.2s; }
+  .delay-3 { animation-delay: 0.3s; }
+  .delay-4 { animation-delay: 0.4s; }
+  .delay-5 { animation-delay: 0.5s; }
+}
